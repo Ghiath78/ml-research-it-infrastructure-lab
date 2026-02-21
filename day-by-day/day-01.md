@@ -46,4 +46,29 @@ as the operational control center of the infrastructure.
 The management node is designed as a controlled operational layer.
 All future infrastructure changes will be executed from this node.
 
-This ensures consistency, traceability and professional workflow discipline.
+This ensures consistency, traceability and professional workflow discipline
+
+---
+
+## Backup & Restore Simulation Result
+
+Test Container: test-backup-lab (ID 201)
+
+Procedure:
+- Created dummy data (10MB random binary)
+- Generated SHA256 checksum
+- Performed vzdump snapshot backup
+- Destroyed container completely
+- Restored container from backup
+- Verified data integrity via checksum
+
+Result:
+- Restore successful
+- No file corruption detected
+- Hash validation: OK
+- Management node unaffected
+
+Conclusion:
+Backup strategy is operationally validated under controlled disaster simulation.
+
+.
